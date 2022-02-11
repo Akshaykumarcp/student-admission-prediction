@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Predict Student Admission</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">Student Admission Prediction</h1>
+
+    <div class="form">
+        <form action="/predict" method="POST">
+            <label for="GRE">Enter GRE Score </label>
+            <input type="number" name="gre_score" id="gre_score" placeholder="GRE Score"><br><br>
+            <label for="TOEFL">Enter TOEFL Score</label>
+            <input type="number" name="toefl_score" id="toefl_score" placeholder="TOEFL Score"><br><br>
+            <label for="University Rating">Enter University Rating</label>
+            <input type="number" name="university_rating" id="university_rating" placeholder="University Rating"><br><br>
+            <label for="SOP">Enter SOP Score</label>
+            <input type="number" name="sop" id="sop" placeholder="SOP Score"><br><br>
+            <label for="LOR">Enter LOR Score</label>
+            <input type="number" name="lor" id="lor" placeholder="LOR Score"><br><br>
+            <label for="CGPA">Enter CGPA Score</label>
+            <input type="number" name="cgpa" id="cgpa"placeholder="CGPA" step="any"><br><br>
+            <label for="research">Have research experience ? </label>
+            <select name="research" id="research"><br><br>
+  <option value="yes">Yes</option>
+  <option value="no">No</option>
+</select><br><br>
+                <input type="submit" value="Predict">
+        </form>
+    </div>
+</div>
+{% endblock %}
